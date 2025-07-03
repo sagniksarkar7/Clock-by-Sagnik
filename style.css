@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #c4d2ef, #dfe6f6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.clock {
+  display: flex;
+  gap: 2vmin;
+  align-items: center;
+}
+
+.group {
+  display: flex;
+  gap: 1.5vmin;
+}
+
+.strip {
+  width: 8vmin;
+  height: 8vmin;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #dfe6f6;
+  box-shadow: -1vmin -1vmin 2vmin -0.5vmin #f9fbfd,
+              1vmin 1vmin 2vmin #a9bee8;
+  position: relative;
+}
+
+.strip .digits {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  transition: transform 0.4s ease-in-out;
+}
+
+.digit {
+  height: 8vmin;
+  width: 8vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vmin;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.digit.active {
+  color: #3e6ccb;
+  font-weight: bold;
+  transform: scale(1.3);
+}
+
+/* Colons Styling */
+.colon {
+  font-size: 6vmin;
+  font-weight: bold;
+  color: #3e6ccb;
+  animation: blink 1s step-start infinite;
+  user-select: none;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
